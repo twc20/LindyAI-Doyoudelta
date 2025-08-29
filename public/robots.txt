@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Prioritize important pages for crawling
+Allow: /services/
+Allow: /locations/
+Allow: /areas/
+Allow: /blog/
+Allow: /vip
+Allow: /reviews
+Allow: /emergency-tire-service
+Allow: /24-7-roadside-assistance
+
+# Block private/admin areas
+Disallow: /private/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://delta-tire-2.lindy.site/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific directives  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Local search optimization
+# Prioritize location and service pages
+Allow: /services/tire-shop-near-me
+Allow: /services/auto-repair-near-me
+Allow: /services/oil-change-near-me
+Allow: /services/brake-repair-near-me
+Allow: /locations/grants-nm-tire-shop
+Allow: /locations/gallup-nm-auto-repair
+Allow: /locations/farmington-nm-tire-service
+Allow: /locations/eagar-az-auto-repair

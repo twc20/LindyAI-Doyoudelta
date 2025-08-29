@@ -1,0 +1,625 @@
+'use client'
+
+import { useState } from 'react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Phone, MapPin, Clock, Star, Wrench, Shield, Car, Users, Award, CheckCircle, Truck, Battery, Thermometer, Triangle, ArrowRight, Calendar, Menu, X } from "lucide-react"
+import { Footer } from "@/components/shared/footer"
+import { ServicesGrid } from "@/components/shared/services-grid"
+import Link from 'next/link'
+import Image from 'next/image'
+
+export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Mobile-First Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/delta-tire-logo.png"
+                alt="Delta Tire Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              <Link href="/" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Home
+              </Link>
+              <Link href="/services" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Services
+              </Link>
+              <Link href="/locations" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Locations
+              </Link>
+              <Link href="/about" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                About
+                <Link 
+                  href="/vip" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program
+                </Link>
+                <Link 
+                  href="/faq" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="/fleet" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Fleet Services
+                </Link>
+              <Link href="/vip" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/faq" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                FAQ
+              </Link>
+              <Link href="/fleet" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Fleet Services
+              </Link>
+              </Link>
+              <Link href="/vip" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Contact
+              </Link>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden border-t border-gray-200 py-4">
+              <nav className="flex flex-col space-y-4">
+                <Link 
+                  href="/" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/services" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link 
+                  href="/locations" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Locations
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                <Link 
+                  href="/vip" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program
+                </Link>
+                <Link 
+                  href="/faq" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="/fleet" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Fleet Services
+                </Link>
+              <Link href="/vip" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/faq" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                FAQ
+              </Link>
+              <Link href="/fleet" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Fleet Services
+              </Link>
+                </Link>
+                <Link 
+                  href="/vip" 
+                  className="bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 font-medium transition-colors text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program - Coming Soon
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                
+                {/* Mobile CTA Buttons */}
+                <div className="pt-4 border-t border-gray-200 space-y-3">
+                  <a 
+                    href="tel:505-287-7946"
+                    className="bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 font-medium transition-colors flex items-center justify-center"
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now - Open Today!
+                  </a>
+                  <Link 
+                    href="/locations"
+                    className="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 font-medium transition-colors flex items-center justify-center"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Find Location
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-12 sm:py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold leading-tight">
+                Do You <span className="text-white drop-shadow-lg">Delta</span>?
+              </h1>
+              <p className="text-lg sm:text-xl md:text-3xl text-red-100 mt-4 font-light">
+                ★★★★★ Top Rated Tire Shop & Auto Repair
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-red-200 mt-2">
+                Grants • Gallup • Farmington • Eagar
+              </p>
+            </div>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 text-red-100 max-w-5xl mx-auto leading-relaxed">
+              Professional <strong>tire service</strong>, <strong>brake repair</strong>, <strong>oil changes</strong>, <strong>wheel alignments</strong>, and <strong>truck accessories</strong> in New Mexico & Arizona. We treat your car like our car. <strong>Open today</strong> - call now!
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all" asChild>
+                <a href="tel:505-287-7946">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now - Open Today!
+                </a>
+              </Button>
+              <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-red-600 font-semibold text-lg px-8 py-4 rounded-xl transition-all" asChild>
+                <a href="https://delta-careers-demo.lindy.site/careers-final-updated.html" target="_blank">
+                  Come Work With Us
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Delta Difference Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Do You Delta?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Delta = Difference. We are the difference.
+            </p>
+            <p className="text-lg text-gray-600 mt-4 max-w-4xl mx-auto">
+              Our slogan isn't just words – it's our commitment. We take the time and effort to be the <strong>difference</strong> that sets us apart in New Mexico and Arizona. Every service, every interaction, every detail matters.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">We Take the Time</h3>
+              <p className="text-gray-600">No rushing, no shortcuts. We invest the time needed to do the job right the first time.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Wrench className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">We Make the Effort</h3>
+              <p className="text-gray-600">Going above and beyond isn't extra – it's standard. We put in the effort to exceed expectations with every service.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Triangle className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">We Are the Difference</h3>
+              <p className="text-gray-600">Delta means difference, and that difference is what makes us the most trusted automotive service in the industry.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Owner - Video Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Meet the Owner
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hear directly from Tannin, owner of Delta Tire, about our commitment to treating your car like our car with digital vehicle inspections and transparent service.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/dU9pTRRDAkc"
+                  title="Meet Tannin - Delta Tire Owner"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  "I'll treat your car like my car"
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Watch Tannin explain our commitment to transparency with digital vehicle inspections, 
+                  manufacturer-specified service intervals, and detailed photos showing exactly what your 
+                  vehicle needs. You'll receive a link to access your inspection report on your phone anytime.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <svg className="w-4 h-4 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Digital Vehicle Inspections
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <svg className="w-4 h-4 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Manufacturer Service Intervals
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <svg className="w-4 h-4 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Detailed Photos & Reports
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Complete Automotive Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience the Delta Difference in every service we provide. Professional tire service, expert auto repair, and trusted automotive care in New Mexico & Arizona.
+            </p>
+          </div>
+          <ServicesGrid />
+        </div>
+      </section>
+
+      {/* Why Choose Delta Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose Delta Tire?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're not the cheapest—we add the most value. <strong>Trusted auto repair</strong>, <strong>professional tire service</strong>, and <strong>honest pricing</strong> since 1995.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Warranty Protection</h3>
+              <p className="text-gray-600">Comprehensive warranties on all our work. Your investment is protected.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Car className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Courtesy Cars Available</h3>
+              <p className="text-gray-600">Stay mobile while we service your vehicle. Free loaner cars available.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Clean, Professional Shop</h3>
+              <p className="text-gray-600">Professional, comfortable waiting area. Clean facility you can trust.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Financing Available</h3>
+              <p className="text-gray-600">Flexible payment options available. Auto repair financing and payment plans.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              ★★★★★ What Our Customers Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              They experience the Delta Difference every day. Real reviews from satisfied customers across New Mexico & Arizona.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "Now I know what 'Do You Delta' means! They really are the difference. Excellent tire service and they truly treat your car like our car!"
+                </p>
+                <p className="font-semibold text-gray-900">- Sarah M., Grants NM</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "The Delta Difference is real! Professional auto repair, clean facility, and they stand behind their work. Highly recommend!"
+                </p>
+                <p className="font-semibold text-gray-900">- Mike R., Gallup NM</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "I definitely Delta now! Fast, reliable tire service and the courtesy car program is a lifesaver!"
+                </p>
+                <p className="font-semibold text-gray-900">- Jennifer L., Farmington NM</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              4 Convenient Locations
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience the Delta Difference across New Mexico & Arizona. Professional tire service and trusted auto repair at all locations.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-red-600">Grants Delta Tire</CardTitle>
+                <CardDescription>
+                  <strong>833 E Sante Fe Ave, Grants NM 87020</strong>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <p><strong>Phone:</strong> (505) 287-7946</p>
+                  <p><strong>Email:</strong> grantsdeltatire@gmail.com</p>
+                  <p><strong>Hours:</strong> M-F 7am to 5pm</p>
+                  <p className="text-gray-600 mt-4">Serving Grants, Milan, Acoma, Laguna, and surrounding areas</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-red-600">Gallup Delta Tire</CardTitle>
+                <CardDescription>
+                  <strong>501 US-491, Gallup, NM 87301</strong>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <p><strong>Phone:</strong> (505) 722-2945</p>
+                  <p><strong>Email:</strong> gallupdeltatire@gmail.com</p>
+                  <p><strong>Hours:</strong> M-Sat 8am to 5pm</p>
+                  <p className="text-gray-600 mt-4">Serving Gallup, Window Rock, and surrounding areas</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-red-600">Farmington Delta Tire</CardTitle>
+                <CardDescription>
+                  <strong>4650 E Main St, Farmington, NM 87402</strong>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <p><strong>Phone:</strong> (505) 325-4500</p>
+                  <p><strong>Email:</strong> store4@grantsdeltatire.com</p>
+                  <p><strong>Hours:</strong> M-Sat 8am to 5pm</p>
+                  <p className="text-gray-600 mt-4">Serving Farmington, Shiprock, Aztec, Bloomfield, and surrounding areas</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-red-600">Eagar Delta Tire</CardTitle>
+                <CardDescription>
+                  <strong>50 W Central Ave, Eagar, AZ 85925</strong>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <p><strong>Phone:</strong> (928) 333-3730</p>
+                  <p><strong>Email:</strong> store5@grantsdeltatire.com</p>
+                  <p><strong>Hours:</strong> M-F 8am to 5pm</p>
+                  <p className="text-gray-600 mt-4">Serving Eagar, Show Low, Springerville, and surrounding areas</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* VIP Program Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-red-600 to-red-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              VIP Program - Save Money, Support Schools
+            </h2>
+            <p className="text-xl text-red-100 max-w-3xl mx-auto mb-8">
+              Experience the Delta Difference with <strong>exclusive discounts</strong> and <strong>priority service</strong>. <strong>10% off all services</strong> and <strong>FREE oil change</strong>!
+            </p>
+            <p className="text-lg text-red-200 max-w-4xl mx-auto mb-8">
+              Support local schools while saving money! Our <strong>VIP cards help fund school programs</strong> - schools keep <strong>80% or more of the proceeds</strong> from sales. <strong>Community support</strong> and <strong>automotive savings</strong> combined!
+            </p>
+            <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all" asChild>
+              <Link href="/vip">
+                Learn More About VIP Program
+                <Link 
+                  href="/vip" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program
+                </Link>
+                <Link 
+                  href="/faq" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="/fleet" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Fleet Services
+                </Link>
+              <Link href="/vip" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/faq" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                FAQ
+              </Link>
+              <Link href="/fleet" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Fleet Services
+              </Link>
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              Contact Delta Tire
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Ready to experience the Delta Difference? Contact us today for <strong>professional tire service</strong>, <strong>expert auto repair</strong>, and discover what "Do You Delta" really means! <strong>Open today</strong> - call now!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+              <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all" asChild>
+                <a href="tel:505-287-7946">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now - Open Today!
+                </a>
+              </Button>
+              <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-8 py-4 rounded-xl transition-all" asChild>
+                <a href="https://delta-careers-demo.lindy.site/careers-final-updated.html" target="_blank">
+                  Come Work With Us
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </Button>
+            </div>
+            <div className="text-center text-gray-400">
+              <p>Call any location for immediate service</p>
+              <p>4 convenient locations across New Mexico & Arizona</p>
+              <p>★★★★★ Rated top tire shop and auto repair service</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}

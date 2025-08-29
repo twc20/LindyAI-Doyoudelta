@@ -1,0 +1,44 @@
+'use client'
+
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Phone } from 'lucide-react'
+
+export function Header() {
+  return (
+    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
+              <img 
+                src="/delta-tire-logo.png" 
+                alt="Delta Tire - Top Rated Tire Shop & Auto Repair in New Mexico & Arizona"
+                className="h-16 w-auto object-contain"
+              />
+              <div>
+                <p className="text-base text-gray-600 font-medium">★★★★★ Top Rated Tire & Auto Service</p>
+              </div>
+            </Link>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <Link href="/services" className="text-gray-700 hover:text-red-600 font-medium transition-colors">Services</Link>
+            <Link href="/locations" className="text-gray-700 hover:text-red-600 font-medium transition-colors">Locations</Link>
+            <Link href="/about" className="text-gray-700 hover:text-red-600 font-medium transition-colors">About</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-red-600 font-medium transition-colors">Blog</Link>
+            <Link href="/vip-program" className="text-gray-700 hover:text-red-600 font-medium transition-colors">VIP Program</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">Contact</Link>
+          </nav>
+          <div className="flex items-center space-x-4">
+            <Button variant="outline" className="hidden sm:inline-flex border-red-200 text-red-600 hover:bg-red-50" asChild>
+              <a href="tel:505-287-7946">
+                <Phone className="w-4 h-4 mr-2" />
+                Call Now
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}

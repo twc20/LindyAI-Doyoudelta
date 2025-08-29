@@ -1,0 +1,300 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { Gift, Star, Shield, Clock, Tag, Award, Menu, X, Phone, MapPin } from 'lucide-react'
+
+export default function VIPPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Mobile-First Header */}
+      <header className="bg-white shadow-lg sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <div className="text-2xl font-bold text-red-600">
+                Delta Tire
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex space-x-8">
+              <Link href="/" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Home
+              </Link>
+              <Link href="/services" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Services
+              </Link>
+              <Link href="/about" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                About
+              </Link>
+              <Link href="/vip" className="text-red-600 font-semibold">
+                VIP Program
+              </Link>
+              <Link href="/contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Contact
+              </Link>
+            </nav>
+
+            {/* Desktop CTA Button */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <Link 
+                href="/contact" 
+                className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Call Now
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden border-t border-gray-200 py-4">
+              <nav className="flex flex-col space-y-4">
+                <Link 
+                  href="/" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/services" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/vip" 
+                  className="text-red-600 hover:text-red-700 font-semibold py-2 px-4 rounded-lg hover:bg-red-50 transition-colors flex items-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Star className="w-4 h-4 mr-2" />
+                  VIP Program
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                
+                {/* Mobile CTA Buttons */}
+                <div className="pt-4 border-t border-gray-200 space-y-3">
+                  <Link 
+                    href="/contact" 
+                    className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center w-full"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now
+                  </Link>
+                  <Link 
+                    href="/locations" 
+                    className="border border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors flex items-center justify-center w-full"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Find Location
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+      
+      {/* Hero Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            Join the Delta Tire<br className="sm:hidden" /> VIP Program
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-red-100 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-2">
+            We treat your car like my car — and our VIP card makes sure you get more value every time you visit.
+          </p>
+          <button className="bg-white text-red-600 hover:bg-gray-100 font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all w-full sm:w-auto max-w-sm mx-auto">
+            Get Your VIP Card Today
+          </button>
+        </div>
+      </section>
+
+      {/* What is the VIP Card Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">What is the VIP Card?</h2>
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                The Delta Tire VIP Card is an exclusive membership program designed for our loyal customers. It&apos;s your key to savings, priority service, and supporting local schools.
+              </p>
+              <div className="bg-red-50 border-l-4 border-red-600 p-4 sm:p-6 rounded-r-xl">
+                <p className="text-base sm:text-lg text-gray-700">
+                  Join today and start enjoying premium benefits while helping your community!
+                </p>
+              </div>
+            </div>
+            <div className="relative order-1 md:order-2">
+              <div className="w-full h-64 sm:h-80 md:h-96 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl shadow-xl flex items-center justify-center">
+                <div className="text-4xl sm:text-5xl md:text-6xl text-red-600 font-bold">VIP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 md:mb-16">Benefits of the VIP Card</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Gift className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Free Oil Change</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Get one free oil change when you join the VIP program.</p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Tag className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">10% Off Services</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Enjoy ongoing 10% discount on all parts and labor.</p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Road Hazard Protection</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Get coverage on your new tires for peace of mind.</p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Clock className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Priority Scheduling</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Move to the front of the line for appointments.</p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Star className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Exclusive Offers</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Access members-only specials and promotions.</p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <Award className="w-10 h-10 sm:w-12 sm:h-12 text-red-600 mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Support Schools</h3>
+              <p className="text-gray-600 text-sm sm:text-base">90% of proceeds go to local education programs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">Why Join?</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 sm:mb-12">
+              Your car is more than just transportation. It&apos;s what gets your family to work, school, games, and adventures. With the VIP Card, we make sure your car gets the same care we&apos;d give our own.
+            </p>
+            <div className="bg-red-50 p-6 sm:p-8 rounded-2xl mb-8 sm:mb-12">
+              <blockquote className="text-lg sm:text-xl italic text-gray-700">
+                &ldquo;The VIP card pays for itself! Between the free oil change and 10% discount, I saved over $200 in the first three months. Plus, knowing I&apos;m helping local schools makes it even better.&rdquo;
+                <footer className="mt-3 sm:mt-4 text-gray-600 font-semibold text-base sm:text-lg">— Sarah M., VIP Member</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 md:mb-16">How It Works</h2>
+          <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">1</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Purchase Your VIP Card</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Visit any Delta Tire location to get your card.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">2</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Use Your Card</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Present your card at every visit for discounts and benefits.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">3</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Enjoy the Savings</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Save money while getting priority service all year long.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & CTA Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">Only $75 for a full year of savings and benefits!</h2>
+          <p className="text-lg sm:text-xl mb-8 sm:mb-10 text-red-100 leading-relaxed max-w-3xl mx-auto">
+            Available at all Delta Tire locations: Gallup, Grants, Farmington, Eagar, and AJ&apos;s Tire & Auto.
+          </p>
+          <button className="bg-white text-red-600 hover:bg-gray-100 font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all w-full sm:w-auto max-w-sm mx-auto">
+            Get Your VIP Card Today
+          </button>
+        </div>
+      </section>
+
+      {/* Mobile-Optimized Footer */}
+      <footer className="bg-gray-900 text-white py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="sm:col-span-2 lg:col-span-2">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Delta Tire</h3>
+              <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">Professional tire and auto service across New Mexico and Arizona.</p>
+              <p className="text-gray-300 text-sm sm:text-base">&ldquo;We treat your car like my car.&rdquo;</p>
+            </div>
+            <div>
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Locations</h4>
+              <ul className="space-y-2 text-gray-300 text-sm sm:text-base">
+                <li>Gallup, NM</li>
+                <li>Grants, NM</li>
+                <li>Farmington, NM</li>
+                <li>Eagar, AZ</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact</h4>
+              <p className="text-gray-300 text-sm sm:text-base">Call your local Delta Tire for VIP card information and pricing.</p>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400">
+            <p className="text-sm sm:text-base">&copy; 2024 Delta Tire. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}

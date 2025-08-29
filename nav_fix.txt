@@ -1,0 +1,18 @@
+              <Link href="/about" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                About
+              </Link>
+              <Link href="/vip" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/faq" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                FAQ
+              </Link>
+              <Link href="/fleet" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Fleet Services
+              </Link>
+              <Link href="/vip" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium transition-colors">
+                VIP Program
+              </Link>
+              <Link href="/contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                Contact
+              </Link>

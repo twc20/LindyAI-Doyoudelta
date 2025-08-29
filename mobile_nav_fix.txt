@@ -1,0 +1,42 @@
+                <Link 
+                  href="/about" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/vip" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program
+                </Link>
+                <Link 
+                  href="/faq" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="/fleet" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Fleet Services
+                </Link>
+                <Link 
+                  href="/vip" 
+                  className="bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 font-medium transition-colors text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  VIP Program - Coming Soon
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-700 hover:text-red-600 font-medium py-2 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>

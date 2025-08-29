@@ -1,0 +1,183 @@
+      {/* Tire Brands Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Premium Tire Brands
+            </h2>
+            <p className="text-xl text-gray-600">
+              We carry top-quality tires from the most trusted brands in the industry
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-xl font-bold text-center text-gray-900 mb-6">Additional Premium Brands</h3>
+            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-4">
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/bfgoodrich.png" 
+                    alt="BFGoodrich Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">BFGoodrich</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/cooper.png" 
+                    alt="Cooper Tires Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Cooper</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/mileking.png" 
+                    alt="Mileking Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Mileking</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/general.png" 
+                    alt="General Tire Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">General</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/nitto.png" 
+                    alt="Nitto Tire Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Nitto</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/falken.png" 
+                    alt="Falken Tire Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Falken</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/michelin.png" 
+                    alt="Michelin Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Michelin</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/mickeythompson.png" 
+                    alt="Mickey Thompson Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Mickey Thompson</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/carlisle.png" 
+                    alt="Carlisle Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Carlisle</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/goodyear.png" 
+                    alt="Goodyear Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Goodyear</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/continental.png" 
+                    alt="Continental Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Continental</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/yokohama.png" 
+                    alt="Yokohama Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Yokohama</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/hankook.png" 
+                    alt="Hankook Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Hankook</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/mastercraft.png" 
+                    alt="Mastercraft Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Mastercraft</p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+                <div className="h-12 flex items-center justify-center mb-2">
+                  <img 
+                    src="/logos/tires/bridgestone.png" 
+                    alt="Bridgestone Logo" 
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-gray-900">Bridgestone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

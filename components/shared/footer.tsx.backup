@@ -1,0 +1,114 @@
+import Link from 'next/link'
+import { services, locations } from '@/lib/data/services'
+
+export function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Delta Tire</h3>
+            <p className="text-gray-300 mb-4">
+              <strong>We treat your car like our car.</strong>
+            </p>
+            <p className="text-gray-300 mb-4">
+              Do You Delta? We are the Difference.
+            </p>
+            <p className="text-sm text-gray-400">
+              ★★★★★ #1 Rated Tire Shop & Auto Repair in NM & AZ
+            </p>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Tire & Auto Services</h4>
+            <ul className="space-y-2">
+              {services.slice(0, 6).map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    href="/services" 
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    {service.title.replace(' Near Me', '')}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Locations</h4>
+            <ul className="space-y-2">
+              {locations.map((location) => (
+                <li key={location.id}>
+                  <Link 
+                    href="/locations" 
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    <strong>{location.name.split(' ')[0]}, {location.address.includes('NM') ? 'NM' : 'AZ'}</strong> - {location.phone}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & More */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact & More</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  <strong>Call for Service</strong> - Open Today
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/blog" 
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  Auto Repair Blog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/vip-program" 
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  <strong>VIP Program</strong> - Save 10%
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  Careers - Join Our Team
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-gray-400 mb-4 md:mb-0">
+              © 2025 Delta Tire - Professional Tire & Auto Repair in New Mexico & Arizona. All rights reserved.
+            </p>
+            <div className="text-sm text-gray-400">
+              <span>doyoudelta.com</span>
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 mt-4">
+            Serving: Grants, Gallup, Farmington, Eagar, Milan, Acoma, Laguna, Window Rock, Shiprock, Aztec, Bloomfield, Show Low, Springerville
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}
